@@ -1,0 +1,121 @@
+[
+    {
+        "description": "Committed to maintaining ecological balance and harmony between humans and nature",
+        "name": "Bangladesh Environment and Development Society (BEDS)",
+        "profileUrl": "https://www.every.org/bangladesh-environment-and-development-society-beds",
+        "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/profile_pics/hmvwknxkzoqjlyibrx8y",
+        "coverImageUrl": "https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_3840,q_80/profile_pics/ctlqgxbm0kfjioseex6e",
+        "logoCloudinaryId": "profile_pics/hmvwknxkzoqjlyibrx8y",
+        "matchedTerms": [],
+        "slug": "bangladesh-environment-and-development-society-beds",
+        "location": "Bangladesh",
+        "websiteUrl": "https://www.bedsbd.org/",
+        "hasAdmin": true,
+        "tags": [
+            "poverty",
+            "wildlife",
+            "education",
+            "environment",
+            "climate",
+            "agriculture",
+            "water",
+            "conservation"
+        ],
+        "donationsEnabled": true
+    },
+    {
+        "description": "We support vulnerable women and enable them to learn about their rights and to raise their voice collectively and systematically.",
+        "name": "Shobujer Ovijan Foundation - SOF",
+        "profileUrl": "https://www.every.org/shobujer-ovijan-foundation-sof",
+        "coverImageUrl": "https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_3840,q_80/profile_pics/b9f6lvwb2cw4wsy23tdu",
+        "matchedTerms": [],
+        "slug": "shobujer-ovijan-foundation-sof",
+        "location": "Bangladesh",
+        "websiteUrl": "https://www.sof-bd.org/",
+        "hasAdmin": true,
+        "tags": [
+            "entrepreneurship",
+            "poverty",
+            "latine-led",
+            "justice",
+            "gender-equality",
+            "education",
+            "health"
+        ],
+        "donationsEnabled": true
+    },
+    {
+        "description": "Empowering millions across Bangladesh through financial inclusion, health, and livelihood support for over 35 years.",
+        "name": "Basic Unit for Resources and Opportunities of Bangladesh (BURO)",
+        "profileUrl": "https://www.every.org/basic-unit-for-resources-and-opportunities-of-bangladesh-buro",
+        "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/faja_profile/yqd8zcwkv6fd32vqignh",
+        "coverImageUrl": "https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_3840,q_80/faja_covers/kbfus/mr8fb4vugujgtvwyz82u",
+        "logoCloudinaryId": "faja_profile/yqd8zcwkv6fd32vqignh",
+        "matchedTerms": [],
+        "slug": "basic-unit-for-resources-and-opportunities-of-bangladesh-buro",
+        "location": "Bangladesh",
+        "websiteUrl": "https://www.burobd.org",
+        "hasAdmin": true,
+        "tags": [
+            "food-security",
+            "poverty",
+            "water",
+            "disease",
+            "womens-health",
+            "environment",
+            "climate",
+            "justice"
+        ],
+        "donationsEnabled": true
+    },
+    {
+        "description": "Provide relief & rehabilitation to uplift deprived, vulnerable groups for socio-economic equality & mainstream participation.",
+        "name": "Protibandhi Shishu Shiekkha O Paricharja Samity (PROSHIPS)",
+        "profileUrl": "https://www.every.org/protibandhi-shishu-shiekkha-o-paricharja-samity",
+        "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/faja_covers/kbfus/oxlfc38bp4w7bz94g2kw",
+        "coverImageUrl": "https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_3840,q_80/faja_covers/kbfus/oxlfc38bp4w7bz94g2kw",
+        "logoCloudinaryId": "faja_covers/kbfus/oxlfc38bp4w7bz94g2kw",
+        "matchedTerms": [],
+        "slug": "protibandhi-shishu-shiekkha-o-paricharja-samity",
+        "location": "Bangladesh",
+        "websiteUrl": "https://proships.org",
+        "hasAdmin": true,
+        "tags": [
+            "education",
+            "climate",
+            "health",
+            "mental-health",
+            "womens-health",
+            "autism",
+            "poverty",
+            "disabilities"
+        ],
+        "donationsEnabled": true
+    },
+    {
+        "description": "To help the ultra poor in underserved communities in the remotest areas of Bangladesh through locally-led adaptation .",
+        "name": "Friendship Luxembourg a.s.b.l.",
+        "profileUrl": "https://www.every.org/friendship-luxembourg-asbl-lu",
+        "logoUrl": "https://res.cloudinary.com/everydotorg/image/upload/c_lfill,w_24,h_24,dpr_2/c_crop,ar_24:24/q_auto,f_auto,fl_progressive/profile_pics/ps0kby6drvzyuwonqtog",
+        "coverImageUrl": "https://res.cloudinary.com/everydotorg/image/upload/f_auto,c_limit,w_3840,q_80/faja_covers/kbfus/bthuya1dgfzrmrpikudy",
+        "logoCloudinaryId": "profile_pics/ps0kby6drvzyuwonqtog",
+        "matchedTerms": [],
+        "slug": "friendship-luxembourg-asbl-lu",
+        "location": "Luxembourg",
+        "websiteUrl": "https://friendship.ngo/luxembourg/",
+        "hasAdmin": true,
+        "tags": [
+            "youth",
+            "humans",
+            "refugees",
+            "climate",
+            "poverty",
+            "entrepreneurship",
+            "disabilities",
+            "justice",
+            "education",
+            "health"
+        ],
+        "donationsEnabled": true
+    }
+]
