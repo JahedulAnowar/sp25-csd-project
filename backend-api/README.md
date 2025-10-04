@@ -1,6 +1,39 @@
 # Backend API
 
-## How to use
+## AWS API URL
+Change _<country_code>_ to appropriate ISO code from json file _country-codes.json_.
+```
+https://tx58keyabg.execute-api.us-east-1.amazonaws.com/prod?country=<country-code>
+```
+
+### API Response for the user
+_'api-response.json'_ file contains example reponse for Bangladesh(BGD).
+```
+json
+{
+    "country": {
+        "name": "Bangladesh",
+        "code": "BGD"
+    },
+    "poverty_data": [
+        {},
+        {}
+    ],
+    "nonprofits": [
+        {},
+        {}
+    ],
+    "summary": {
+        "total_nonprofits_found": "5",
+        "total_poverty_data_years": "10",
+        "generated_at": "2025-10-03T18:59:19.847255"
+    }
+}
+```
+
+________________________________________________________________________________________________
+
+## How to use test script for local testing
 Create a virutal environment
 ```
 python3 -m venv venv
@@ -28,26 +61,3 @@ Check _'country-codes.json'_ file for data fetching.
 ```
 python3 data-aggregator-test.py
 ```
-
-
-## API Response for the user
-_'api-response.json'_ file contains example reponse for Bangladesh(BGD).
-```
-json
-{
-    "country": {
-        "name": "Bangladesh",
-        "code": "BGD"
-    },
-    "poverty_data": [
-        {},
-        {}
-    ],
-    "nonprofits": [
-        {},
-        {}
-    ]
-}
-```
-
-
