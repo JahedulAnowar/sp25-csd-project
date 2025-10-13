@@ -3,7 +3,7 @@
 ## AWS API URL
 Change _<country_code>_ to appropriate ISO code from json file _country-codes.json_.
 ```
-https://tx58keyabg.execute-api.us-east-1.amazonaws.com/prod?country=<country-code>
+https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/prod?country=<country-code>
 ```
 
 ### API Response for the user
@@ -61,3 +61,8 @@ Check _'country-codes.json'_ file for data fetching.
 ```
 python3 data-aggregator-test.py
 ```
+
+## Update CountryCodes via CloudShell in Deployment
+
+1. Upload files `country-codes.json` and `setup-dynamodb-countries-cs.py` cloudshell
+2. Run command `python setup-dynamodb-countries-cs.py` to create and populate the _CountryCodes_ table.

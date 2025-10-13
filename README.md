@@ -22,7 +22,12 @@ Navigate to `backend-api/` folder and follow the README instructions to run the 
 ## API Consumer
 
 ### 1. Command-line
-_under development_
+
+Change _<country_code>_ to appropriate ISO code from json file _country-codes.json_.
+```
+https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/prod?country=<country-code>
+```
+
 
 ### 2. Web Application
 _under development_
