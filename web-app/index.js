@@ -4,6 +4,7 @@ const COUNTRY_LIST_PATH = "./country-codes.json";
 let countries = [];
 let nonprofits = [];
 let currentCountry = { name: "—", code: "—" };
+let povertyChart = null;
 
 const getEl = (id) => document.getElementById(id);
 
@@ -15,6 +16,12 @@ const summaryText = getEl("summaryKpi");
 const errorBox = getEl("error");
 const emptyBox = getEl("empty");
 const cardsContainer = getEl("cards");
+
+const chartCard = getEl("chartCard");
+const chartMeta = getEl("chartMeta");
+const chartEmpty = getEl("chartEmpty");
+const chartCanvas = getEl("povertyChart");
+
 
 async function loadCountryList() {
   try {
@@ -51,9 +58,9 @@ function showCountrySuggestions(value) {
   suggestionBox.innerHTML = matched
     .map(
       (r) => `
-    <div class="sugg-item" data-code="${r.country_code}" data-name="${r.country_name}">
-      <div>${r.country_name}</div><div class="sugg-code">${r.country_code}</div>
-    </div>`
+      <div class="sugg-item" data-code="${r.country_code}" data-name="${r.country_name}">
+        <div>${r.country_name}</div><div class="sugg-code">${r.country_code}</div>
+      </div>`
     )
     .join("");
 
@@ -90,6 +97,10 @@ async function fetchCountryData(countryCode, fallbackName) {
   cardsContainer.classList.add("d-none");
   cardsContainer.innerHTML = "";
 
+  chartCard.classList.add("d-none");
+  chartEmpty.classList.add("d-none");
+  if (povertyChart) { povertyChart.destroy(); povertyChart = null; }
+
   setLoadingState(true);
 
   try {
@@ -115,6 +126,7 @@ async function fetchCountryData(countryCode, fallbackName) {
         : "—";
     summaryText.textContent = `${nonprofits.length} organisations • Updated ${updatedDate}`;
 
+    renderPovertyChart(data.poverty_data);
     renderNonprofitCards();
   } catch (err) {
     errorBox.classList.remove("d-none");
@@ -153,7 +165,7 @@ function renderNonprofitCards() {
         : "";
 
       return `
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12">
           <div class="card h-100">
             ${cover}
             <div class="card-body d-flex flex-column">
@@ -177,7 +189,64 @@ function renderNonprofitCards() {
   cardsContainer.classList.remove("d-none");
 }
 
-// --- Event Listeners ---
+function renderPovertyChart(povertyData) {
+  if (!Array.isArray(povertyData) || !povertyData.length) {
+    chartCard.classList.remove("d-none");
+    chartEmpty.classList.remove("d-none");
+    if (povertyChart) { povertyChart.destroy(); povertyChart = null; }
+    return;
+  }
+
+  const rows = povertyData
+    .map(d => {
+      const y = Number(d.reporting_year);
+      const h = Number(d.headcount);
+      return Number.isFinite(y) && Number.isFinite(h) ? { y, h: h * 100 } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.y - b.y);
+
+  if (!rows.length) {
+    chartCard.classList.remove("d-none");
+    chartEmpty.classList.remove("d-none");
+    if (povertyChart) { povertyChart.destroy(); povertyChart = null; }
+    return;
+  }
+
+  const labels = rows.map(r => String(r.y));
+  const series = rows.map(r => Number(r.h.toFixed(2)));
+
+  chartMeta.textContent = `${labels[0]}–${labels[labels.length - 1]}`;
+  chartCard.classList.remove("d-none");
+  chartEmpty.classList.add("d-none");
+
+  if (povertyChart) povertyChart.destroy();
+
+  povertyChart = new Chart(chartCanvas.getContext("2d"), {
+    type: "line",
+    data: {
+      labels,
+      datasets: [{
+        label: "Headcount ratio (%)",
+        data: series,
+        borderWidth: 2,
+        tension: 0.25,
+        fill: false,
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { title: { display: true, text: "Year" } },
+        y: { beginAtZero: true, title: { display: true, text: "%" } }
+      }
+    }
+  });
+}
 
 inputField.addEventListener("input", (e) => showCountrySuggestions(e.target.value));
 
