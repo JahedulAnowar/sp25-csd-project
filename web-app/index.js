@@ -1,4 +1,4 @@
-const API_URL = "https://tx58keyabg.execute-api.us-east-1.amazonaws.com/prod?country=";
+const API_URL = "https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/prod?country=";
 const COUNTRY_LIST_PATH = "./country-codes.json";
 
 let countries = [];

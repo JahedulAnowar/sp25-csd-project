@@ -1,0 +1,62 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+*.aar
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+build/
+.gradle/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/dictionaries
+.idea/libraries
+.idea/modules.xml
+.idea/compiler.xml
+.idea/assetWizardSettings.xml
+.idea/codeStyles
+.idea/deploymentTargetDropDown.xml
+.idea/vcs.xml
+.idea/navEditor.xml
+.idea/runConfigurations
+.idea/terminal.xml
+.idea/misc.xml
+.idea/render.xml
+.idea/kotlin-dsl-external-build-config.xml
+
+# External libraries
+libs/
+app/libs/
+
+# Android Studio and Gradle files
+.idea/
+gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar # Keep the wrapper JAR for consistency
+!gradle/wrapper/gradle-wrapper.properties # Keep wrapper properties
+
+# Keystore files
+*.keystore
+*.jks
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Crashlytics or other analytics data
+crashlytics/
