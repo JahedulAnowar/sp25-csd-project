@@ -6,6 +6,21 @@ Change _<country_code>_ to appropriate ISO code from json file _country-codes.js
 https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/prod?country=<country-code>
 ```
 
+Add _x-api-key_ as a **Header** with the request.
+
+### cURL command for testing
+Windows:
+```
+curl.exe -i "https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/prod?country=BGD" -H "x-api-key: ptBqdW6nzLavUqUPpEa5530vVQFWz8TKaoYFYthO" -H "Accept: application/json"
+```
+
+Linux:
+```{bash}
+curl -i "https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/prod?country=BGD" \
+  -H "x-api-key: ptBqdW6nzLavUqUPpEa5530vVQFWz8TKaoYFYthO" \
+  -H "Accept: application/json"
+```
+
 ### API Response for the user
 _'api-response.json'_ file contains example reponse for Bangladesh(BGD).
 ```
@@ -57,7 +72,7 @@ Create _API key_ from https://www.every.org/developer.
 Check _'country-codes.json'_ file for data fetching.
 
 ## Run the code
-
+To test data aggregation locally:
 ```
 python3 data-aggregator-test.py
 ```
