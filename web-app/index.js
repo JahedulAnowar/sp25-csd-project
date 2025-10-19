@@ -265,7 +265,7 @@ searchButton.addEventListener("click", () => {
   fetchCountryData(match.country_code, match.country_name);
 });
 
-// --- Initialize on page load ---
+// --- Initialise on page load ---
 (async () => {
   await loadCountryList();
 })();

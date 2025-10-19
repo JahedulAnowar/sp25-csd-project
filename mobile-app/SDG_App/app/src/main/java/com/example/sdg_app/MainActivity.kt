@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set up Retrofit with your AWS API
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://tx58keyabg.execute-api.us-east-1.amazonaws.com/")
+            .baseUrl("https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

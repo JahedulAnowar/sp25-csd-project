@@ -115,7 +115,7 @@ def lambda_handler(event, context):
                 break
 
             all_results.extend(nonprofits)
-            print(f"Fetched page {page}, total organizations: {len(all_results)}")
+            print(f"Fetched page {page}, total organisations: {len(all_results)}")
 
             # Stop if we've reached the last page
             pagination = data.get("pagination", {})
