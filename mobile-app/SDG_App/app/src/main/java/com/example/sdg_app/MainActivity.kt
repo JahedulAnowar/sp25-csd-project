@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity() {
 
         val client = OkHttpClient.Builder()
             .addInterceptor(interceptor)
+            .connectTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
+            .readTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
+            .writeTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
             .build()
 
         val retrofit = Retrofit.Builder()
@@ -143,8 +146,8 @@ class MainActivity : AppCompatActivity() {
                                 append("Survey: ${latestData.survey_acronym ?: "N/A"}\n")
                                 append("Poverty Rate: ${latestData.headcount?.let { String.format("%.2f%%", it * 100) } ?: "N/A"}\n")
                                 append("Population: ${latestData.reporting_pop?.let { String.format("%,.0f", it) } ?: "N/A"}\n")
-                                append("Mean Income: ${latestData.mean?.let { String.format("%.2f", it) } ?: "N/A"}\n")
-                                append("Median Income: ${latestData.median?.let { String.format("%.2f", it) } ?: "N/A"}\n")
+                                append("Mean Income: $$${latestData.mean?.let { String.format("%.2f", it) } ?: "N/A"}\n")
+                                append("Median Income: $$${latestData.median?.let { String.format("%.2f", it) } ?: "N/A"}\n")
                                 append("Gini Index: ${latestData.gini?.let { String.format("%.4f", it) } ?: "N/A"}\n")
                                 append("Poverty Line: ${latestData.poverty_line ?: "N/A"}\n\n")
 
