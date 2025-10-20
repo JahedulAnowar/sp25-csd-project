@@ -11,9 +11,15 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val PI_KEY = "ptBqdW6nzLavUqUPpEa5530vVQFWz8TKaoYFYthO"
+    }
 
     private lateinit var apiService: CountryApiService
 
@@ -36,9 +42,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Set up Retrofit with your AWS API
+        // Set up Retrofit with the AWS API
+        val interceptor = Interceptor { chain ->
+            val newReq = chain.request().newBuilder()
+                .addHeader("x-api-key", PI_KEY)
+                .build()
+            chain.proceed(newReq)
+        }
+
+        val client = OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .build()
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://lvuxh1wgz6.execute-api.us-east-1.amazonaws.com/")
+            .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
